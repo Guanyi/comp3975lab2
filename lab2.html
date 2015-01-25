@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
+	<title>COMP3975 Lab2</title>
 </head>
 <body>
-	<form action="lab2.php" method="POST">
-<input type="text" name="subject" /><br>
-<textarea rows="4" cols="50" name="text"></textarea>
-<input type="submit">
-</textarea> 
-</form>
+    <form action="lab2.php" method="GET">
+        <label for="subject">SUBJECT</label><input type="text" id="subject" name="subject" /><br>
+		<label for="text">BODY</label><br>
+		<textarea rows="4" cols="50" name="text" id="text"></textarea><br>
+		<label for="private">PRIVATE</label>
+		<input type="checkbox" name="private" id="private" /><br>
+		<input type="submit">
+	</form>
 </body>
 </html>
