@@ -9,16 +9,15 @@ $file = fopen("data.txt", "w+") or die ("error");
 
 $sub = trim($sub);
 $input = trim($input);
-if($sub == "" or $input == "" ) {
+if( $sub == "" or $input == "" ) {
     die("Missing required data.");
 }
 
-if($sub != strip_tags($sub) or $input != strip_tags($input)) {
-    die("breakin attempt detected");
+if($sub != strip_tags($sub) or $input != strip_tags($input) or
+    $sub != mysql_real_escape_string($sub) or $input != mysql_real_escape_string($input)) {
+    die("breaking attempt detected");
 }
 
-//$sub = mysql_real_escape_string($sub);
-//$input = mysql_real_escape_string($sub);
 
 if (isset($_GET['private'])) {
     fwrite($file, PRIVATELINE);
